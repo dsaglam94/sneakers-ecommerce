@@ -10,7 +10,7 @@ const DesktopImageCarousel = ({ handleLightbox }) => {
   };
 
   return (
-    <div className="hidden md:block md:w-1/2 max-w-[600px] min-w-[450px] mx-auto lg:mx-0 p-20 space-y-6">
+    <div className="hidden md:block md:w-1/2 max-w-[650px] min-w-[600px] mx-auto lg:mx-0 p-20 space-y-6">
       <div className="w-full rounded-xl overflow-hidden">
         <img
           onClick={handleLightbox}
@@ -28,8 +28,8 @@ const DesktopImageCarousel = ({ handleLightbox }) => {
               onClick={handleSelect}
               className={
                 selected === String(idx)
-                  ? "w-full rounded-xl cursor-pointer opacity-40 border-2 border-primary"
-                  : "w-full rounded-xl cursor-pointer hover:opacity-60 border-2 border-transparent"
+                  ? "w-full h-24 object-cover rounded-xl cursor-pointer opacity-40 border-2 border-primary"
+                  : "w-full h-24 object-cover rounded-xl cursor-pointer hover:opacity-60 border-2 border-transparent"
               }
               src={thumbnail}
               alt="product thumbnail"
