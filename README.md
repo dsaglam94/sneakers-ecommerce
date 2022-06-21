@@ -2,9 +2,11 @@
   
   # Sneakers e-Commerce Web App
   ## [Click Here](https://imdawn-sneakers-ecommerce.netlify.app/) for live site
+  
+  ### Here's the design prototype:
+  ![active-states-basket-empty](https://user-images.githubusercontent.com/98871279/174809907-d922dae5-fcca-43e9-a92c-4eee38360148.jpg)
 
-https://user-images.githubusercontent.com/98871279/174804809-8902443d-6aac-4af0-95c6-f88a87590bf8.mov
-
+https://user-images.githubusercontent.com/98871279/174810890-23c6ea6d-db80-4c3b-ab1e-c358669896d6.mov
 
 </div>
   
