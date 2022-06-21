@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Cart from "./components/Cart";
+import DesktopDescriptionArea from "./components/DesktopDescriptionArea";
+import Lightbox from "./components/Lightbox";
+import MobileImageCarousel from "./components/MobileImageCarousel";
+import Navbar from "./components/Navbar";
+// import thumbnail from "./images/image-product-1-thumbnail.jpg";
 
-function App() {
+const App = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [numberOfItems, setNumberOfItems] = useState(0);
+  const [product, setProduct] = useState({
+    title: null,
+    price: null,
+    amount: null,
+    thumbnail: null,
+  });
+
+  const handleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
+  const handleLightbox = () => {
+    setIsLightboxOpen(!isLightboxOpen);
+  };
+
+  console.log(product);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="md:px-20">
+      <Navbar
+        numberOfSelectedProducts={product.amount}
+        handleClick={handleCart}
+      />
+      <Cart product={product} setProduct={setProduct} isCartOpen={isCartOpen} />
+      <MobileImageCarousel />
+      <DesktopDescriptionArea
+        numberOfItems={numberOfItems}
+        setNumberOfItems={setNumberOfItems}
+        handleLightbox={handleLightbox}
+        setProduct={setProduct}
+        product={product}
+      />
+      <Lightbox
+        isLightboxOpen={isLightboxOpen}
+        setIsLightboxOpen={setIsLightboxOpen}
+      />
     </div>
   );
-}
+};
 
 export default App;
